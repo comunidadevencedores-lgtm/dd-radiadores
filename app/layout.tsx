@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -7,31 +7,132 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
+const SITE_URL = "https://ddradiadores.com.br";
+
 export const metadata: Metadata = {
-  title: "DD Radiadores | Curitiba | Conserto e Manutenção de Radiadores",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "DD Radiadores | Conserto e Manutenção de Radiadores em Curitiba",
+    template: "%s | DD Radiadores",
+  },
   description:
-    "Especialistas em manutenção de radiadores e ar-condicionado para veículos leves e pesados em Curitiba. +20 anos de experiência. Orçamento grátis!",
+    "Especialistas em manutenção de radiadores e ar-condicionado automotivo em Curitiba. Veículos leves e pesados, nacionais e importados. +20 anos de experiência. Orçamento grátis pelo WhatsApp.",
   keywords: [
     "radiadores curitiba",
     "conserto radiador curitiba",
-    "manutenção radiador",
+    "manutenção radiador curitiba",
     "ar condicionado automotivo curitiba",
-    "intercooler",
+    "intercooler curitiba",
+    "solda de radiador curitiba",
     "radiadores dd",
+    "oficina de radiadores capão da imbuia",
   ],
+  authors: [{ name: "DD Radiadores" }],
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
-    title: "DD Radiadores | Curitiba",
+    title: "DD Radiadores | Conserto e Manutenção de Radiadores em Curitiba",
     description:
-      "Especialistas em manutenção de radiadores e ar-condicionado. Qualidade, rapidez e preço justo.",
-    url: "https://ddradiadores.com.br",
+      "Especialistas em manutenção de radiadores e ar-condicionado automotivo. +20 anos de experiência em Curitiba. Qualidade, agilidade e preço justo.",
+    url: SITE_URL,
     siteName: "DD Radiadores",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "DD Radiadores - Conserto e manutenção de radiadores em Curitiba",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DD Radiadores | Conserto e Manutenção de Radiadores em Curitiba",
+    description:
+      "Especialistas em manutenção de radiadores e ar-condicionado automotivo em Curitiba. +20 anos de experiência.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+  icons: {
+    icon: "/icon.svg",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0f172a",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  name: "DD Radiadores",
+  image: `${SITE_URL}/opengraph-image`,
+  "@id": SITE_URL,
+  url: SITE_URL,
+  telephone: "+554132319088",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "R. Prof. Nivaldo Braga, 1922",
+    addressLocality: "Curitiba",
+    addressRegion: "PR",
+    addressCountry: "BR",
+    postalCode: "82810-150",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -25.419,
+    longitude: -49.219,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Curitiba",
+  },
+  sameAs: ["https://www.instagram.com/radiadoresdd"],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "08:00",
+      closes: "12:00",
+    },
+  ],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Manutenção de Radiadores e Intercooler",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Conserto de Ar Condicionado Automotivo",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -41,7 +142,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={inter.variable}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </body>
     </html>
   );
 }

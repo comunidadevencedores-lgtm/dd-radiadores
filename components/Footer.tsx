@@ -120,6 +120,19 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Map */}
+        <div className="mt-14 rounded-2xl overflow-hidden border border-white/10 h-72">
+          <iframe
+            title="Localização DD Radiadores no Google Maps"
+            src="https://www.google.com/maps?q=R.+Prof.+Nivaldo+Braga,+1922+-+Cap%C3%A3o+da+Imbuia,+Curitiba+-+PR&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
         {/* Bottom bar */}
         <div className="mt-14 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p>Copyright © {new Date().getFullYear()} Radiadores DD | Curitiba - PR</p>
