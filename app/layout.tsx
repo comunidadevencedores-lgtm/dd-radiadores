@@ -11,29 +11,6 @@ const inter = Inter({
 
 const SITE_URL = "https://ddradiadores.com.br";
 
-// Manifest PWA
-const manifest = {
-  name: "DD Radiadores",
-  short_name: "DD Radiadores",
-  description: "Especialistas em manutenção de radiadores e ar-condicionado automotivo em Curitiba",
-  start_url: "/",
-  display: "standalone",
-  background_color: "#000000",
-  theme_color: "#dc2626",
-  icons: [
-    {
-      src: "/android-chrome-192x192.png",
-      sizes: "192x192",
-      type: "image/png",
-    },
-    {
-      src: "/android-chrome-512x512.png",
-      sizes: "512x512",
-      type: "image/png",
-    },
-  ],
-};
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -174,7 +151,8 @@ export default function RootLayout({
     <html lang="pt-BR" className={inter.variable}>
       <head>
         <link rel="manifest" href="/site.webmanifest" />
-      </head>y className="antialiased">
+      </head>
+      <body className="antialiased">
         {children}
         <script
           type="application/ld+json"
