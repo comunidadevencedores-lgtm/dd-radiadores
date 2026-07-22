@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { MapPin, Mail, Phone, Instagram, MessageCircle } from "lucide-react";
 
 const WHATSAPP =
@@ -12,19 +13,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-rose-600 flex items-center justify-center font-black text-white">
-                DD
-              </div>
-              <div>
-                <span className="font-bold text-white text-lg block leading-none">
-                  Radiadores DD
-                </span>
-                <span className="text-xs text-rose-400 tracking-wider">
-                  CURITIBA - PR
-                </span>
-              </div>
-            </div>
+            <Image
+              src="/images/logo.webp"
+              alt="DD Radiadores"
+              width={160}
+              height={91}
+              className="h-14 w-auto object-contain mb-4"
+            />
             <p className="text-slate-400 text-sm leading-relaxed">
               Especialistas em manutenção de radiadores e ar condicionado para
               veículos leves e pesados.

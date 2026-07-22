@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
@@ -64,26 +65,38 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="bg-slate-950/50 border border-white/10 rounded-3xl p-8 md:p-10"
+            className="space-y-6"
           >
-            <h3 className="text-xl font-bold text-white mb-6">
-              Por que escolher a DD Radiadores?
-            </h3>
-            <ul className="space-y-4">
-              {benefits.map((item, i) => (
-                <motion.li
-                  key={item}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.05 }}
-                  className="flex items-start gap-3"
-                >
-                  <CheckCircle2 className="w-6 h-6 text-rose-500 shrink-0 mt-0.5" />
-                  <span className="text-slate-200">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/3]">
+              <Image
+                src="/images/patio-dd-radiadores.webp"
+                alt="Pátio da oficina DD Radiadores com veículos em manutenção, Curitiba"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="bg-slate-950/50 border border-white/10 rounded-3xl p-8 md:p-10">
+              <h3 className="text-xl font-bold text-white mb-6">
+                Por que escolher a DD Radiadores?
+              </h3>
+              <ul className="space-y-4">
+                {benefits.map((item, i) => (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + i * 0.05 }}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="w-6 h-6 text-rose-500 shrink-0 mt-0.5" />
+                    <span className="text-slate-200">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         </div>
       </div>

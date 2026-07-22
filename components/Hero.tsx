@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MessageCircle, Shield, Clock, Award } from "lucide-react";
 
@@ -12,8 +13,20 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
+      {/* Real facade photo background */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/fachada-dd-radiadores.webp"
+          alt="Fachada da oficina DD Radiadores no Capão da Imbuia, Curitiba"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-30"
+        />
+      </div>
+
       {/* Background gradient + pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-rose-950/40" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900/95 to-rose-950/50" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-rose-900/20 via-transparent to-transparent" />
       
       {/* Grid pattern */}

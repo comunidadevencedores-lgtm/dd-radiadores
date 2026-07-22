@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "DD Radiadores - Conserto e manutenção de radiadores em Curitiba",
+        alt: "Fachada da DD Radiadores em Curitiba",
       },
     ],
   },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "DD Radiadores | Conserto e Manutenção de Radiadores em Curitiba",
     description:
       "Especialistas em manutenção de radiadores e ar-condicionado automotivo em Curitiba. +20 anos de experiência.",
-    images: ["/opengraph-image"],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon.svg",
+    icon: "/icon.png",
   },
 };
 
@@ -80,7 +80,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AutoRepair",
   name: "DD Radiadores",
-  image: `${SITE_URL}/opengraph-image`,
+  image: `${SITE_URL}/images/og-image.jpg`,
   "@id": SITE_URL,
   url: SITE_URL,
   telephone: "+554132319088",

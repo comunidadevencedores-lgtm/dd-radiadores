@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -37,18 +38,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-rose-600 flex items-center justify-center font-black text-white text-lg group-hover:bg-rose-500 transition-colors">
-              DD
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-bold text-white text-lg leading-none">
-                Radiadores
-              </span>
-              <span className="block text-xs text-rose-400 font-medium tracking-wider">
-                CURITIBA
-              </span>
-            </div>
+          <a href="#inicio" className="flex items-center group">
+            <Image
+              src="/images/logo.webp"
+              alt="DD Radiadores"
+              width={160}
+              height={91}
+              priority
+              className="h-12 md:h-14 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Nav */}

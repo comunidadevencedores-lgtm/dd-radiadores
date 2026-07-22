@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Wrench,
@@ -100,7 +101,41 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-16 grid sm:grid-cols-2 gap-6"
+        >
+          <div className="relative rounded-2xl overflow-hidden border border-white/5 aspect-video group">
+            <Image
+              src="/images/carga-de-gas-ar-condicionado.webp"
+              alt="Carga de gás de ar condicionado automotivo feita pela DD Radiadores em Curitiba"
+              fill
+              sizes="(max-width: 640px) 100vw, 50vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 text-white font-semibold text-sm bg-slate-950/70 px-3 py-1.5 rounded-full">
+              Carga de gás de A/C
+            </span>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden border border-white/5 aspect-video group">
+            <Image
+              src="/images/manutencao-veiculo-dd.webp"
+              alt="Manutenção de radiador em veículo no pátio da DD Radiadores, Curitiba"
+              fill
+              sizes="(max-width: 640px) 100vw, 50vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 text-white font-semibold text-sm bg-slate-950/70 px-3 py-1.5 rounded-full">
+              Diagnóstico e reparo
+            </span>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-10 text-center"
         >
           <a
             href={WHATSAPP}
