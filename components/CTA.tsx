@@ -9,7 +9,7 @@ const WHATSAPP =
 export default function CTA() {
   return (
     <section className="py-20 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-rose-700 via-rose-600 to-rose-700" />
+      <div className="absolute inset-0 bg-gradient-to-r from-red-700 via-red-600 to-red-700" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_50%)]" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -21,10 +21,10 @@ export default function CTA() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Faça hoje seu orçamento!
           </h2>
-          <p className="text-xl text-rose-100 mb-2 font-medium">
+          <p className="text-xl text-red-100 mb-2 font-medium">
             Sem custo · Referência em Curitiba
           </p>
-          <p className="text-rose-100/80 mb-10 max-w-2xl mx-auto">
+          <p className="text-red-100/80 mb-10 max-w-2xl mx-auto">
             Tem alguma dúvida? Fale conosco agora mesmo e garanta o melhor
             atendimento para o seu veículo.
           </p>
@@ -34,7 +34,7 @@ export default function CTA() {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-white text-rose-700 hover:bg-rose-50 px-8 py-4 rounded-full text-lg font-bold transition-all hover:scale-105 shadow-xl w-full sm:w-auto justify-center"
+              className="inline-flex items-center gap-3 bg-white text-red-700 hover:bg-red-50 px-8 py-4 rounded-full text-lg font-bold transition-all hover:scale-105 shadow-xl w-full sm:w-auto justify-center"
             >
               <MessageCircle className="w-6 h-6" />
               WhatsApp — Orçamento Grátis

@@ -7,20 +7,20 @@ const WHATSAPP =
 
 export default function Footer() {
   return (
-    <footer id="contato" className="bg-slate-950 border-t border-white/5">
+    <footer id="contato" className="bg-slate-950 border-t border-red-600/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-rose-600 flex items-center justify-center font-black text-white">
+              <div className="w-10 h-10 rounded-lg bg-red-600 flex items-center justify-center font-black text-white">
                 DD
               </div>
               <div>
                 <span className="font-bold text-white text-lg block leading-none">
                   Radiadores DD
                 </span>
-                <span className="text-xs text-rose-400 tracking-wider">
+                <span className="text-xs text-red-400 tracking-wider">
                   CURITIBA - PR
                 </span>
               </div>
@@ -40,7 +40,7 @@ export default function Footer() {
                   href="https://maps.google.com/?q=R.+Prof.+Nivaldo+Braga,+1922+-+Capão+da+Imbuia,+Curitiba"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-slate-400 hover:text-rose-400 transition-colors"
+                  className="flex items-start gap-3 text-slate-400 hover:text-red-400 transition-colors"
                 >
                   <MapPin className="w-5 h-5 shrink-0 mt-0.5" />
                   <span>
@@ -53,7 +53,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:contato@ddradiadores.com.br"
-                  className="flex items-center gap-3 text-slate-400 hover:text-rose-400 transition-colors"
+                  className="flex items-center gap-3 text-slate-400 hover:text-red-400 transition-colors"
                 >
                   <Mail className="w-5 h-5" />
                   contato@ddradiadores.com.br
@@ -62,7 +62,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:4132319088"
-                  className="flex items-center gap-3 text-slate-400 hover:text-rose-400 transition-colors"
+                  className="flex items-center gap-3 text-slate-400 hover:text-red-400 transition-colors"
                 >
                   <Phone className="w-5 h-5" />
                   (41) 3231-9088
@@ -84,7 +84,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-rose-400 transition-colors"
+                    className="text-slate-400 hover:text-red-400 transition-colors"
                   >
                     {link.label}
                   </a>
@@ -100,7 +100,7 @@ export default function Footer() {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-500 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all mb-6"
+              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all mb-6"
             >
               <MessageCircle className="w-4 h-4" />
               WhatsApp
@@ -111,7 +111,7 @@ export default function Footer() {
                 href="https://www.instagram.com/radiadoresdd/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-slate-400 hover:text-rose-400 transition-colors"
+                className="inline-flex items-center gap-2 text-slate-400 hover:text-red-400 transition-colors"
               >
                 <Instagram className="w-5 h-5" />
                 @radiadoresdd

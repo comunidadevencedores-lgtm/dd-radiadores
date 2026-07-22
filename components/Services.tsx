@@ -62,7 +62,7 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-rose-400 font-semibold tracking-wider text-sm uppercase">
+          <span className="text-red-400 font-semibold tracking-wider text-sm uppercase">
             O que fazemos
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-5">
@@ -83,12 +83,12 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group relative bg-slate-900/80 border border-white/5 hover:border-rose-500/40 rounded-2xl p-7 transition-all duration-300 hover:shadow-xl hover:shadow-rose-900/20 hover:-translate-y-1"
+              className="group relative bg-slate-900/80 border border-white/5 hover:border-red-500/40 rounded-2xl p-7 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/20 hover:-translate-y-1"
             >
-              <div className="w-14 h-14 rounded-2xl bg-rose-600/15 group-hover:bg-rose-600/25 flex items-center justify-center mb-5 transition-colors">
-                <service.icon className="w-7 h-7 text-rose-400" />
+              <div className="w-14 h-14 rounded-2xl bg-red-600/15 group-hover:bg-red-600/25 flex items-center justify-center mb-5 transition-colors">
+                <service.icon className="w-7 h-7 text-red-400" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-rose-300 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors">
                 {service.title}
               </h3>
               <p className="text-slate-400 leading-relaxed">{service.description}</p>
@@ -106,7 +106,7 @@ export default function Services() {
             href={WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-rose-600 hover:bg-rose-500 text-white px-10 py-5 rounded-full text-lg font-bold transition-all hover:scale-105 shadow-xl shadow-rose-600/30"
+            className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-500 text-white px-10 py-5 rounded-full text-lg font-bold transition-all hover:scale-105 shadow-xl shadow-red-600/30"
           >
             <MessageCircle className="w-6 h-6" />
             Faça seu orçamento agora — sem custo
