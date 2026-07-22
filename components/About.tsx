@@ -24,7 +24,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-rose-400 font-semibold tracking-wider text-sm uppercase">
+            <span className="text-red-400 font-semibold tracking-wider text-sm uppercase">
               Quem somos
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-6 leading-tight">
@@ -45,9 +45,9 @@ export default function About() {
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <div className="bg-rose-600/20 border border-rose-500/30 rounded-xl px-5 py-3">
+              <div className="bg-red-600/20 border border-red-500/30 rounded-xl px-5 py-3">
                 <div className="text-2xl font-black text-white">+20</div>
-                <div className="text-xs text-rose-300 uppercase tracking-wide">
+                <div className="text-xs text-red-300 uppercase tracking-wide">
                   Anos de experiência
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function About() {
                     transition={{ delay: 0.2 + i * 0.05 }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle2 className="w-6 h-6 text-rose-500 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-6 h-6 text-red-500 shrink-0 mt-0.5" />
                     <span className="text-slate-200">{item}</span>
                   </motion.li>
                 ))}

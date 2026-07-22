@@ -31,7 +31,7 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-slate-950/95 backdrop-blur-md border-b border-white/10 shadow-lg"
+          ? "bg-black/95 backdrop-blur-md border-b border-red-600/30 shadow-lg"
           : "bg-transparent"
       )}
     >
@@ -55,7 +55,7 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-slate-300 hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-rose-500 after:transition-all hover:after:w-full"
+                className="text-sm font-medium text-slate-300 hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-red-500 after:transition-all hover:after:w-full"
               >
                 {item.label}
               </a>
@@ -75,7 +75,7 @@ export default function Header() {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-500 text-white px-4 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 shadow-lg shadow-rose-600/30"
+              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-4 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 shadow-lg shadow-red-600/30"
             >
               <MessageCircle className="w-4 h-4" />
               Orçamento Grátis
@@ -100,7 +100,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-slate-950 border-t border-white/10"
+            className="md:hidden bg-black/95 border-t border-red-600/30"
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
@@ -108,7 +108,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block text-lg font-medium text-slate-200 hover:text-rose-400"
+                  className="block text-lg font-medium text-slate-200 hover:text-red-400"
                 >
                   {item.label}
                 </a>
@@ -125,7 +125,7 @@ export default function Header() {
                   href={WHATSAPP}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-rose-600 text-white px-4 py-3 rounded-full font-semibold"
+                  className="flex items-center justify-center gap-2 bg-red-600 text-white px-4 py-3 rounded-full font-semibold"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Orçamento Grátis no WhatsApp

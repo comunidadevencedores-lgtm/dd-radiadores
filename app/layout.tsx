@@ -7,7 +7,32 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
+// Cores da marca: Preto (#000000) e Vermelho (#dc2626)
+
 const SITE_URL = "https://ddradiadores.com.br";
+
+// Manifest PWA
+const manifest = {
+  name: "DD Radiadores",
+  short_name: "DD Radiadores",
+  description: "Especialistas em manutenção de radiadores e ar-condicionado automotivo em Curitiba",
+  start_url: "/",
+  display: "standalone",
+  background_color: "#000000",
+  theme_color: "#dc2626",
+  icons: [
+    {
+      src: "/android-chrome-192x192.png",
+      sizes: "192x192",
+      type: "image/png",
+    },
+    {
+      src: "/android-chrome-512x512.png",
+      sizes: "512x512",
+      type: "image/png",
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -41,7 +66,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Fachada da DD Radiadores em Curitiba",
@@ -53,7 +78,7 @@ export const metadata: Metadata = {
     title: "DD Radiadores | Conserto e Manutenção de Radiadores em Curitiba",
     description:
       "Especialistas em manutenção de radiadores e ar-condicionado automotivo em Curitiba. +20 anos de experiência.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/og-image.png"],
   },
   robots: {
     index: true,
@@ -66,21 +91,26 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon.png",
+    icon: [
+      { rel: "icon", url: "/favicon.ico" },
+      { rel: "icon", type: "image/png", sizes: "32x32", url: "/favicon-32x32.png" },
+      { rel: "icon", type: "image/png", sizes: "16x16", url: "/favicon-16x16.png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0f172a",
+  themeColor: "#dc2626",
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AutoRepair",
   name: "DD Radiadores",
-  image: `${SITE_URL}/images/og-image.jpg`,
+  image: `${SITE_URL}/images/og-image.png`,
   "@id": SITE_URL,
   url: SITE_URL,
   telephone: "+554132319088",
@@ -142,7 +172,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={inter.variable}>
-      <body className="antialiased">
+      <head>
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>y className="antialiased">
         {children}
         <script
           type="application/ld+json"
@@ -151,4 +183,9 @@ export default function RootLayout({
       </body>
     </html>
   );
+}
+
+// Manifest for PWA
+export async function generateStaticParams() {
+  return [];
 }

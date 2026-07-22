@@ -55,7 +55,7 @@ export default function FAQ() {
       />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="text-rose-400 font-semibold tracking-wider text-sm uppercase">
+          <span className="text-red-400 font-semibold tracking-wider text-sm uppercase">
             Perguntas frequentes
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-white mt-3">
@@ -76,7 +76,7 @@ export default function FAQ() {
               >
                 <span className="font-bold text-white">{faq.question}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-rose-400 shrink-0 transition-transform ${
+                  className={`w-5 h-5 text-red-400 shrink-0 transition-transform ${
                     openIndex === i ? "rotate-180" : ""
                   }`}
                 />

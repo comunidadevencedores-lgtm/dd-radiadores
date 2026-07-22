@@ -12,6 +12,12 @@ export default function Hero() {
     <section
       id="inicio"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      style={{
+        backgroundImage: "url('/images/hero-bg.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
     >
       {/* Real facade photo background */}
       <div className="absolute inset-0">
@@ -47,14 +53,14 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 bg-rose-600/20 border border-rose-500/30 text-rose-300 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-rose-400 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/30 text-red-300 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
               Radiadores DD · Curitiba - PR
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-6">
               Especialistas em{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-rose-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">
                 Radiadores
               </span>{" "}
               e Ar Condicionado
@@ -71,7 +77,7 @@ export default function Hero() {
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-rose-600 hover:bg-rose-500 text-white px-8 py-4 rounded-full text-lg font-bold transition-all hover:scale-105 shadow-xl shadow-rose-600/40"
+                className="inline-flex items-center justify-center gap-3 bg-red-600 hover:bg-red-500 text-white px-8 py-4 rounded-full text-lg font-bold transition-all hover:scale-105 shadow-xl shadow-red-600/40"
               >
                 <MessageCircle className="w-6 h-6" />
                 Faça seu orçamento grátis
@@ -133,8 +139,8 @@ export default function Hero() {
                   transition={{ delay: 0.3 + i * 0.1 }}
                   className="flex items-start gap-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-rose-600/20 flex items-center justify-center shrink-0">
-                    <item.icon className="w-6 h-6 text-rose-400" />
+                  <div className="w-12 h-12 rounded-xl bg-red-600/20 flex items-center justify-center shrink-0">
+                    <item.icon className="w-6 h-6 text-red-400" />
                   </div>
                   <div>
                     <h3 className="font-bold text-white text-lg">{item.title}</h3>
@@ -152,7 +158,7 @@ export default function Hero() {
         <svg viewBox="0 0 1440 80" fill="none" className="w-full">
           <path
             d="M0 80L60 70C120 60 240 40 360 35C480 30 600 40 720 45C840 50 960 50 1080 45C1200 40 1320 30 1380 25L1440 20V80H0Z"
-            fill="#0f172a"
+            fill="#000000"
           />
         </svg>
       </div>
