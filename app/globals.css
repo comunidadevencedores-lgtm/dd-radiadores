@@ -1,10 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #dc2626;
-  --color-primary-dark: #991b1b;
-  --color-secondary: #000000;
-  --color-accent: #fbbf24;
+  /* Site accent = azure blue (buttons, badges, links, CTA). The brand
+     logo mark stays red as a raster image — this only recolors UI. */
+  --color-rose-50: #f4f8fd;
+  --color-rose-100: #e4eefb;
+  --color-rose-200: #c4daf7;
+  --color-rose-300: #99bef1;
+  --color-rose-400: #619ae9;
+  --color-rose-500: #3d83e4;
+  --color-rose-600: #1d6fe0;
+  --color-rose-700: #185bb8;
+  --color-rose-800: #134994;
+  --color-rose-900: #0f3a74;
+  --color-rose-950: #0a274e;
+
+  --color-primary: #1d6fe0;
+  --color-primary-dark: #134994;
+  --color-primary-light: #619ae9;
+  --color-secondary: #050505;
+  --color-accent: #ea060f;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
@@ -14,7 +29,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #0a0a0a;
+  background-color: #050505;
   color: #f8fafc;
 }
 
@@ -23,9 +38,9 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: #dc2626;
+  background: #1d6fe0;
   border-radius: 4px;
 }
