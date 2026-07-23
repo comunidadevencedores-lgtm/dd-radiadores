@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-90TNRKWR5D";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
-
-// Cores da marca: Preto (#000000) e Vermelho (#dc2626)
 
 const SITE_URL = "https://ddradiadores.com.br";
 
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Fachada da DD Radiadores em Curitiba",
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     title: "DD Radiadores | Conserto e Manutenção de Radiadores em Curitiba",
     description:
       "Especialistas em manutenção de radiadores e ar-condicionado automotivo em Curitiba. +20 anos de experiência.",
-    images: ["/images/og-image.png"],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -68,26 +69,21 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { rel: "icon", url: "/favicon.ico" },
-      { rel: "icon", type: "image/png", sizes: "32x32", url: "/favicon-32x32.png" },
-      { rel: "icon", type: "image/png", sizes: "16x16", url: "/favicon-16x16.png" },
-    ],
-    apple: "/apple-touch-icon.png",
+    icon: "/icon.png",
   },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#dc2626",
+  themeColor: "#0f172a",
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AutoRepair",
   name: "DD Radiadores",
-  image: `${SITE_URL}/images/og-image.png`,
+  image: `${SITE_URL}/images/og-image.jpg`,
   "@id": SITE_URL,
   url: SITE_URL,
   telephone: "+554132319088",
@@ -149,21 +145,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={inter.variable}>
-      <head>
-        <link rel="manifest" href="/site.webmanifest" />
-      </head>
       <body className="antialiased">
         {children}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        {/* Google Analytics (GA4) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
-}
-
-// Manifest for PWA
-export async function generateStaticParams() {
-  return [];
 }
